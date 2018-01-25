@@ -61,10 +61,10 @@ class database():
                     id = lines[-1]
                     gene = pattern.search(hgvs).group(1)
                     if id in self.data:
-                        info='\t'.join(self.data[id])
-                        OUT.write('{0}\t{1}\t{2}\t{3}'.format(hgvs,lines[1],lines[2],info))
-                    if gene in self.gene:
-                        OUT.write('********基因概述*******:{0}\t{1}\n'.format(self.gene[gene],lines[3]))
+                        info='\t'.join(self.data[id][0:2])
+                        OUT.write('{0}\t{1}\t{2}\t{3}\t'.format(hgvs,lines[1],lines[2],info))
+                        if gene in self.gene:
+                            OUT.write('{0}{1}\t{2}\n'.format(self.gene[gene],self.data[id][2],lines[3]))
         OUT.close()
     def run(self):
         self.readgene()
