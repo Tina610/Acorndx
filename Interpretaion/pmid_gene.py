@@ -10,7 +10,9 @@ import os, sys
 import re
 import xlrd
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(sys.argv[0]))))
-
+‘’‘
+此程序主要是利用基因库和突变库改写文献引用格式，匹配而已
+’‘’
 def readfilemutation(infile,outfile):
     file=xlrd.open_workbook(infile)
     OUT=open(outfile,'w')
@@ -67,6 +69,8 @@ def pmidgene(listinfo):
                 tmp.append(pmidsing)
             tmp=','.join(tmp)
             pmidsub='\cite{left}pmid{tmp}{right}'.format(left='{',right='}',tmp=tmp)
+            info = re.sub(id, pmidsub, listinfo[info])
+            information.append(info)
         elif re.search(r'\[\d+.*?\]',listinfo[info]):
             id=re.search(r'\[(\d.*)\]',listinfo[info]).group(1)
             print(id)

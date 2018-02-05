@@ -5,7 +5,9 @@
 # @Mail    : tingli@annoroad.com
 # @File    : Assay_aritical.py
 # @Software: PyCharm
-
+‘’‘
+此程序主要利用文献数据库改成bib的形式
+’‘’
 import os, sys
 import re
 import xlrd
