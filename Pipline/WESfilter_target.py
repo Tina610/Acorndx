@@ -37,7 +37,5 @@ def readtarget(target):
                     print('this site '+str(i)+'is error')
     return dicttar
 
-
-
 if __name__ == '__main__':
     filter(sys.argv[1],sys.argv[2],sys.argv[3])
