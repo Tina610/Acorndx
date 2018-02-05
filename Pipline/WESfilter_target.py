@@ -5,8 +5,8 @@
 # @Mail    : tingli@annoroad.com
 # @File    : WESfilter_target.py
 # @Software: PyCharm
-
-import sys
+import os sys
+os.system('source /home/blood/Software/Python/python3/Lib/bin/activate')
 ####从全外数据过滤芯片结果
 
 def filter(targetbed,inputvcf,outvcf):
